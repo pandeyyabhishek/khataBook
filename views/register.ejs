@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Financial Tracker</title>
+    <link rel="stylesheet" href="/StyleSheets/register.css">
+</head>
+<body>
+   <div class="pageWrapper">
+    <h1>Sign Up</h1>
+    <div class="main">
+     <form action="/auth/register" method="POST">
+        <div class="form-grp">
+            <label class="label" for="password">Name:</label>
+            <input class="form-box" type="text" placeholder="Name" name="name">
+        </div>
+       <br><br>
+        <div class="form-grp">
+         <label class="label" for="email">Email:</label>
+         <input class="form-box" type="email" placeholder="Email" name="email">
+        </div>
+         <br><br>
+         <div class="form-grp">
+             <label class="label" for="password">Password:</label>
+             <input class="form-box" type="password" placeholder="Create Password" name="password">
+         </div>
+        <br><br>
+        
+         <button type="submit">Create Account</button>
+     </form>
+    </div>
+   </div>
+</body>
+</html>

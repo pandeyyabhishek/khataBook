@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.filters button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.filters .active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.hisaab-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.hisaab-item {
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #fff;
+  width: 30%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.hisaab-item h2 {
+  margin-top: 0;
+}
+
+.hisaab-item.encrypted::before {
+  content: "🔒 Encrypted";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.hisaab-item.available::before {
+  content: "✅ Available";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: #28a745;
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+}

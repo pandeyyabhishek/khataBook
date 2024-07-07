@@ -1,0 +1,26 @@
+/* Same styles as above, add these for the detail view */
+.hisaab-detail {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.hisaab-detail .actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.hisaab-detail .actions button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.hisaab-detail h2 {
+  margin-top: 0;
+}

@@ -1,0 +1,39 @@
+/* Same styles as above, add these for the form */
+main {
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form .options {
+  display: flex;
+  flex-direction: column;
+}
+
+form .options label {
+  margin-bottom: 5px;
+}
+
+form button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
