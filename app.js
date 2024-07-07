@@ -11,7 +11,7 @@ const hisaabRouter = require('./routes/hisaabRouter');
 const authMiddleWares = require('./middlewares/authMiddlewares')
 const { hisaabModel } = require('./models/hisaab-models')
 const { userModel } = require('./models/user-models')
-
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 // Serve static files from the 'public' directory
@@ -29,6 +29,7 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/hisaab', hisaabRouter);
 
-app.listen(3000, () => {
-    console.log('server is running on port 3000');
+
+app.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}`);
 });
