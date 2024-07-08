@@ -11,7 +11,7 @@ const hisaabRouter = require('./routes/hisaabRouter');
 const authMiddleWares = require('./middlewares/authMiddlewares')
 const { hisaabModel } = require('./models/hisaab-models')
 const { userModel } = require('./models/user-models')
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 // Serve static files from the 'public' directory
