@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const { isLoggedIn, redirectToProfile } = require('../middlewares/authMiddlewares')
-const indexController = require('../controllers/indexController')
-router.get('/', isLoggedIn, indexController.landingPage);
+const { landingPage, profileController } = require('../controllers/indexController')
+router.get('/', isLoggedIn, landingPage);
 
 
-router.get('/profile', isLoggedIn, indexController.profileController);
+router.get('/profile', isLoggedIn, profileController);
 
 module.exports = router;

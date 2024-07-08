@@ -8,20 +8,26 @@ module.exports.landingPage = (req, res) => {
 }
 
 module.exports.profileController = async (req, res) => {
-    let byDate = Number(req.query.byDate);
-    let { startDate, endDate } = req.query;
-    byDate = byDate ? byDate : -1;
-    startDate = startDate ? startDate : new Date("2003-12-18");
-    endDate = endDate ? endDate : new Date();
-    const user = await userModels.findOne({ email: req.user.email })
-        .populate({
-            path: 'hisaabArray',
-            match: {
-                createdAt: { $gte: startDate, $lte: endDate },
-            },
-            options: {
-                sort: { createdAt: byDate },
-            }
-        });
-    return res.render('profile', { user });
+    try {
+        // console.log(req.user);
+        let byDate = Number(req.query.byDate);
+        let { startDate, endDate } = req.query;
+        byDate = byDate ? byDate : -1;
+        startDate = startDate ? startDate : new Date("2003-12-18");
+        endDate = endDate ? endDate : new Date();
+        const user = await userModels.findOne({ email: req.user.email })
+            .populate({
+                path: 'hisaabArray',
+                match: {
+                    createdAt: { $gte: startDate, $lte: endDate },
+                },
+                options: {
+                    sort: { createdAt: byDate },
+                }
+            });
+        return res.render('profile', { user });
+    }
+    catch (err) {
+        console.log(err.message);
+    }
 }

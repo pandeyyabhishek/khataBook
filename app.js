@@ -25,10 +25,13 @@ app.set('views', path.join(__dirname, 'views'));  //using EJS as the template en
 
 
 //forward routes starting with / to index-router
+
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/hisaab', hisaabRouter);
-
+app.use('*', (req, res) => {
+    return res.render('invalidRoute');
+});
 
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);

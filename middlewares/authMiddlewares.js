@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const userModels = require('../models/user-models');
+const hisaabModel = require('../models/hisaab-models')
 // const { use } = require('../routes/indexRouter');
 
 module.exports.isLoggedIn = async (req, res, next) => {
@@ -35,4 +36,5 @@ module.exports.redirectToProfile = async (req, res, next) => {
     }
     else
         return next();
-};   
+};
+

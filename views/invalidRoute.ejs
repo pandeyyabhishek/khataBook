@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404</title>
+    <link rel="stylesheet" href="/StyleSheets/invalidRoute.css" />
+  </head>
+  <body>
+    <div>
+      <img
+        src="https://media.geeksforgeeks.org/auth-dashboard-uploads/Illustration.svg"
+        alt=""
+      />
+
+      <p>
+        Your page is lost or someone has stolen it, <br />
+        please return to main page. <br />
+      </p>
+      <button id="backToHome">Home Page</button>
+    </div>
+    <script>
+      document
+        .querySelector("#backToHome")
+        .addEventListener("click", function () {
+          window.location.href = "/";
+        });
+    </script>
+  </body>
+</html>
