@@ -115,6 +115,7 @@ module.exports.deleteHisaabController = async (req, res) => {
         if (index != -1) {
             req.user.hisaabArray.splice(index, 1);
             await hisaabModel.deleteOne({ _id: req.params.id });
+            await req.user.save();   //save the changes.
         } else {
             res.send('you do not have access to delete the hisaab.');
         }
