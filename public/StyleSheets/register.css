@@ -30,7 +30,7 @@ h1 {
   font-weight: 700;
 }
 #toLoginPage {
-  text-decoration: none;
+  /* text-decoration: none; */
   color: #333333;
 }
 .main {
