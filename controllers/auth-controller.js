@@ -38,7 +38,8 @@ module.exports.registerController = async (req, res) => {
         let check = await userModels.findOne({ email });
 
         if (check) {
-            return res.send("Email is already registered.");
+            // return res.send("Email is already registered.");
+            return res.redirect('/');
         }
 
         // Encrypt the password using the bcrypt npm package
