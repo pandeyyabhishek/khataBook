@@ -7,6 +7,7 @@
     <form action="/hisaab/create" method="post">
       <div class="mb-4">
         <input
+          required
           name="title"
           type="text"
           placeholder="Shopping Hisaab, Ghar ka Kharch..."
@@ -16,16 +17,24 @@
       <div class="mb-4">
         <textarea
           name="description"
+          required
           placeholder="Daal, Aata, Cheeni"
           class="resize-none w-full p-2 border border-gray-300 rounded h-32"
         ></textarea>
       </div>
       <div class="mb-4">
         <label class="inline-flex items-center">
-          <input name="encrypted" type="checkbox" class="form-checkbox" />
+          <input
+            id="encrypt-checkbox"
+            name="encrypted"
+            type="checkbox"
+            class="form-checkbox"
+          />
           <span class="ml-2">Encrypt this file</span>
         </label>
         <input
+          disabled
+          id="passcode-input"
           name="passcode"
           type="password"
           placeholder="Passcode"
@@ -57,4 +66,17 @@
     </form>
   </div>
 </div>
+<script>
+  // JavaScript to enable/disable the passcode field
+  document
+    .getElementById("encrypt-checkbox")
+    .addEventListener("change", function () {
+      var passcodeInput = document.getElementById("passcode-input");
+      if (this.checked) {
+        passcodeInput.removeAttribute("disabled");
+      } else {
+        passcodeInput.setAttribute("disabled", "true");
+      }
+    });
+</script>
 <%- include('./partials/footer.ejs') %>

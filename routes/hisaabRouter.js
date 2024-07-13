@@ -12,7 +12,6 @@ const { viewHisaabPageController,
 router.post('/create', isLoggedIn, createHisaabController);
 router.post('/view/:id/verified', isLoggedIn, passcodeController);
 router.post('/edit/:id', isLoggedIn, editHisaabController);
-
 router.get('/create', isLoggedIn, viewHisaabPageController);
 router.get('/view/:id', isLoggedIn, viewHisaabController);
 router.get('/edit/:id', isLoggedIn, editHisaabPageController);

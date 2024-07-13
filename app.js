@@ -29,7 +29,7 @@ app.set('views', path.join(__dirname, 'views'));  //using EJS as the template en
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/hisaab', hisaabRouter);
-app.use('*', (req, res) => {
+app.get('*', (req, res) => {
     return res.render('invalidRoute');
 });
 

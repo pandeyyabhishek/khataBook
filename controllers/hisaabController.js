@@ -62,6 +62,7 @@ module.exports.passcodeController = async (req, res) => {
     let passcode = String(req.body.passcode);
     try {
         let hisaabDetails = await hisaabModel.findOne({ _id: req.params.id })
+
         if (!hisaabDetails)
             return res.render('invalidRoute');
         if (passcode === hisaabDetails.passcode) {
