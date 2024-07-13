@@ -6,12 +6,12 @@ const userModels = require('../models/user-models');
 module.exports.createHisaabController = async function (req, res) {
 
     //destructuring.
-    let { title, description, userId, encrypted, shareable, editpermissions, passcode, } = req.body;
+    let { title, description, userId, encrypted, shareable, editable, passcode, } = req.body;
     //encrypted, shareable, editpermissions these are boolean value in database so its logic is.
     try {
         encrypted = encrypted === 'on' ? true : false;
         shareable = shareable === 'on' ? true : false;
-        editpermissions = editpermissions === 'on' ? true : false;
+        editable = editable === 'on' ? true : false;
         let createdHisaab = await hisaabModel.create({
             title,
             description,
@@ -19,7 +19,7 @@ module.exports.createHisaabController = async function (req, res) {
             encrypted,
             shareable,
             passcode,
-            editpermissions,
+            editable,
         })
         // console.log(req.user.hisaabArray);
         req.user.hisaabArray.push(createdHisaab._id);
@@ -38,6 +38,7 @@ module.exports.viewHisaabPageController = async function (req, res) {
 module.exports.viewHisaabController = async function (req, res) {
     try {
         let hisaabDetails = await hisaabModel.findOne({ _id: req.params.id })
+
         if (!hisaabDetails)
             return res.render('invalidRoute');
         if (hisaabDetails.shareable == false) {
@@ -83,6 +84,7 @@ module.exports.editHisaabPageController = async (req, res) => {
         if (index == -1)
             return res.send(`you don't have access to edit this record.`)
 
+        // console.log(hisaabDetails);
         return res.render('edit', { hisaabDetails });
     } catch (err) {
         console.log(err.message);
@@ -90,13 +92,13 @@ module.exports.editHisaabPageController = async (req, res) => {
 }
 module.exports.editHisaabController = async (req, res) => {
     try {
-        let { title, description, userId, encrypted, shareable, editpermissions, passcode, } = req.body;
+        let { title, description, userId, encrypted, shareable, editable, passcode, } = req.body;
         encrypted = encrypted === 'on' ? true : false;
         shareable = shareable === 'on' ? true : false;
-        editpermissions = editpermissions === 'on' ? true : false;
+        editable = editable === 'on' ? true : false;
 
         await hisaabModel.updateOne({ _id: req.params.id }, {
-            title, description, encrypted, shareable, editpermissions, passcode,
+            title, description, encrypted, shareable, editable: editable, passcode,
         })
 
         return res.redirect('/profile');

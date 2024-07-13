@@ -26,7 +26,8 @@
       </div>
       <div class="mb-4">
         <label class="inline-flex items-center">
-          <input name="encrypted" type="checkbox" class="form-checkbox" />
+          <input name="encrypted" type="checkbox" class="form-checkbox" <%=
+          hisaabDetails.encrypted ? 'checked':'' %> />
           <span class="ml-2">Encrypt this file</span>
         </label>
         <textarea
@@ -40,19 +41,21 @@
       </div>
       <div class="mb-4">
         <label class="inline-flex items-center">
-          <input name="shareable" type="checkbox" class="form-checkbox" />
+          <input name="shareable" type="checkbox" class="form-checkbox" <%=
+          hisaabDetails.shareable ? 'checked':'' %> />
           <span class="ml-2">Shareable file?</span>
         </label>
       </div>
       <div class="mb-4">
         <label class="inline-flex items-center">
-          <input name="editpermissions" type="checkbox" class="form-checkbox" />
+          <input name="editable" type="checkbox" <%= hisaabDetails.editable ?
+          'checked':'' %> class="form-checkbox" />
           <span class="ml-2">Edit permissions.</span>
         </label>
       </div>
       <div>
         <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">
-          Make Changes in <%=hisaabDetails.title%>
+          Making Changes in <%=hisaabDetails.title%>
         </button>
       </div>
     </form>
